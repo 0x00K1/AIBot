@@ -1,6 +1,6 @@
 # AIBot_Discord
 
-# Setup
+# #Setup
 
 This assumes you have a Discord account, server and a role in that server with priviliges to set up a bot.
 
@@ -22,4 +22,4 @@ Go to https://chat.openai.com/chat from the Chrome browser and log in
 
 ## DM your ChatGPT bot in Discord
 
-# Enjoy :)
+# #Enjoy :)
