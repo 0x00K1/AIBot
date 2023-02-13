@@ -19,7 +19,6 @@ Go to https://chat.openai.com/chat from the Chrome browser and log in
 2. Open `Application` tab > Cookies
    ![image](https://user-images.githubusercontent.com/36258159/205494773-32ef651a-994d-435a-9f76-a26699935dac.png)
 3. Copy the value for `__Secure-next-auth.session-token` and add it to Secrets as an environment variable with the name `CHAT_GPT_SESSION_TOKEN`
-   ![image](image/README/1670176444011.png)
 
 ## DM your ChatGPT bot in Discord
 
