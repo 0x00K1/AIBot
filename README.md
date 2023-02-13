@@ -9,13 +9,9 @@ This assumes you have a Discord account, server and a role in that server with p
 1. Go to https://discord.com/developers/applications create an application.
 2. And build a bot under the application.
 3. Get the token from Bot setting.
-   ![1670143818339](image/README/1670143818339.png)
 4. Store the token in Secrets as an environment variable with the name `DISCORD_BOT_TOKEN`
-   ![1670176461891](image/README/1670176461891.png)
 5. Turn MESSAGE CONTENT INTENT `ON`
-   ![1670176647431](image/README/1670176647431.png)
 6. Invite your bot through OAuth2 URL Generator
-   ![1670176722801](image/README/1670176722801.png)
 
 ## Get your session token
 Go to https://chat.openai.com/chat from the Chrome browser and log in
