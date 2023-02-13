@@ -27,4 +27,4 @@ Go to https://chat.openai.com/chat from the Chrome browser and log in
 
 ## DM your ChatGPT bot in Discord
 
-   ![1670177247310](image/README/1670177247310.png)
+# Enjoy :)
