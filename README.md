@@ -1,4 +1,4 @@
-# AIBot_Discord
+# AIBot
 
 # #Setup
 
