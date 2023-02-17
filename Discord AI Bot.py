@@ -110,56 +110,7 @@ Whew i looovvveee u <3
 
         # AI
         if p_user_message.startswith('/> '):
-            # Get the message from the user
-            input_text = p_user_message[3:]
-
-            # Send "Processing . . ." message
-            processing_message = await message.channel.send('''
-                                    𝖯𝖱𝖮𝖢𝖤𝖲𝖲𝖨𝖭𝖦 . . .
-`Estimate from 0s to 300s`
-                                                                    ''')
-
-            try:
-                response = chatbot.get_chat_response(input_text, output="text")
-
-                # Wait for a response for up to 5 minutes
-                for i in range(300):
-                    if response:
-                        break
-                    await asyncio.sleep(1)
-
-                # Send the response to the channel
-                list = []
-                for key, value in response.items():
-                    list.append(f'{key}: {value}')
-
-                reply = list[0][9:]
-
-                await message.channel.send(f'''{message.author.mention},\n{reply}\n
-                                            ''')
-
-                # Delete the "Processing . . ." message
-                await processing_message.delete()
-
-                msg = await message.channel.send(
-                    "\n**𝙉𝙊𝙏𝙀 **:`Please wait 1 minute before sending any more messages to avoid potential issues and dropping requests.`")
-                # Add a reaction to the message
-                await msg.add_reaction("⚠️")
-
-                while True:
-                    try:
-                        # Restart the script
-                        subprocess.run(["python ", "Discord AI bot.py"])
-                    except:
-                        continue
-            except:
-                # Somthing Wrong!!
-                wrong_msg = await message.channel.send(f'''{message.author.mention}\n`Somthing Wrong, Please try again later. `''')
-
-                await wrong_msg.add_reaction('💀')
-
-                # Delete the "Processing . . ." message
-                await processing_message.delete()
+           # Here The bug about 60 line , i removed it according to GPT policy.
     else:
         # Display list of available commands
         await message.channel.send(f'''
