@@ -22,6 +22,7 @@ config = {
   "accept_language": "en-US,en",
 }
 
+CHANNEL = "ℂ𝕪𝕓𝕖𝕣𝔸𝕀-🤖"
 # Create a chatbot object
 chatbot = Chatbot(config, conversation_id=None)
 
@@ -33,37 +34,34 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-
+@client.event
+async def on_guild_join(guild):
+    # Check if the bot has permissions to create channels
+    if guild.me.guild_permissions.manage_channels:
+        # Create a new channel with the specified name
+        channel = await guild.create_text_channel(CHANNEL)
+        
 @client.event
 async def on_message(message):
     if message.author == client.user:
         return
-
-    # Comments
-    # if message.content.startswith('# '):
-    #     await message.add_reaction('👀')
-    #     return message.content
-
-    # Out of service Mode Message
+    
+    # Check if the message was sent in the bot channel
+    if message.channel.name != CHANNEL:
+        return
+      
+     # Out of service Mode Message
     # if message.content == message.content:
     #     out_msg = await message.channel.send("`Out of Service 503`")
     #     # Add a reaction to the message
     #     await out_msg.add_reaction("🚫")
     #     return message.content
+    
+    # Comments
+    if message.content.startswith('# '):
+         await message.add_reaction('👀')
+         return message.content
 
-    # Service Mode=OFF
-    # if message.content == '$/> Set Service Mode=OFF':
-    #     OFF_msg = await message.channel.send("Done")
-    #     # Add a reaction to the message
-    #     await OFF_msg.add_reaction("✅")
-    #     exit()
-
-    # Service Mode=ON
-    # if message.content == '$/> Set Service Mode=ON':
-    #     ON_msg = await message.channel.send("Done")
-    #     # Add a reaction to the message
-    #     await ON_msg.add_reaction("✅")
-    #     exit()
 
     # User Interacting Start
     Char = '$'
