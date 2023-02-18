@@ -1,8 +1,6 @@
 # AIBot
 # #For_Discord . .
 
-# #Setup
-
 This assumes you have a Discord account, server and a role in that server with priviliges to set up a bot.
 
 ## Create a Discord bot
