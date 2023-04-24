@@ -1,3 +1,5 @@
+# Reverse GPT API
+
 import os
 import subprocess
 import discord
@@ -22,7 +24,7 @@ config = {
   "accept_language": "en-US,en",
 }
 
-CHANNEL = "ℂ𝕪𝕓𝕖𝕣𝔸𝕀-🤖"
+CHANNEL = "channel-name"
 # Create a chatbot object
 chatbot = Chatbot(config, conversation_id=None)
 
@@ -32,7 +34,6 @@ async def on_ready():
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
-    print('------')
 
 @client.event
 async def on_guild_join(guild):
@@ -64,15 +65,15 @@ async def on_message(message):
 
 
     # User Interacting Start
-    Char = '$'
+    prefix = '$'
     user_message = message.content
-    if user_message.startswith(Char):
+    if user_message.startswith(prefix):
         # Open the file in 'a' (append) mode
         with open("MSG_logs.txt", "a") as f:
             # Write the message to the file
             f.write(f"{message.author}: {user_message}\n")
 
-        # Remove `$` Char
+        # Remove `$` prefix
         p_user_message = user_message[1:]
 
         # Help
@@ -93,19 +94,11 @@ async def on_message(message):
         # Public
         if p_user_message.lower() == 'info':
             # Send
-            await message.channel.send(f'''
-                                Holla! {message.author.mention},
-I'm CyberAI, the advanced AI bot created by Kun, I am excited to introduce you to this amazing technology that I have been working on. The CyberAI bot is a program that uses artificial intelligence to perform various tasks and functions. It is designed to learn and adapt over time, allowing it to become more efficient and effective at completing tasks. The CyberAI bot is capable of learning from its experiences, making decisions based on data and information, and even communicating with users through natural language processing. I believe that this technology has the potential to revolutionize the way we interact with machines and make our lives easier and more efficient. I am excited to see where this technology takes us in the future and I hope you will join me in exploring all that the CyberAI bot has to offer.
-                                                ''')
 
         # Do u love me ?
         if p_user_message.lower() == '':
             # Send
-            await message.channel.send(f'''
-                                oowwww! {message.author.mention},
-Whew i looovvveee u <3
-                                                ''')
-
+            
         # AI
         if p_user_message.startswith('/> '):
            # Here The bug about 60 line , i removed it according to GPT policy.
@@ -115,10 +108,10 @@ Whew i looovvveee u <3
                                          {message.author.mention}           
                                            *𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒  *
                                     +--------------------------------+
-                                    |                       `$Help`                          |
-                                    |                       `$INFO`                          |
-                                    |    `$/> [Here your message]`       |
-                                    |                `# [Comment]`                    |
+                                    |                       `$Help`                          
+                                    |                       `$INFO`                          
+                                    |    `$/> [Here your message]`       
+                                    |                `# [Comment]`                    
                                     +--------------------------------+
                                     ''')
         time.sleep(3)
